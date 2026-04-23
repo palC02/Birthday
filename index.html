@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="images/ishq-risk.mp3" type="audio/mpeg">
+</audio>
+
+<div id="bday-app">
+
+  <!-- Screen 1: Opening -->
+  <div id="screen1" class="screen active">
+    <div class="stars-bg" id="stars"></div>
+    <div class="rose-petals-container" id="petals"></div>
+    <div class="s1-top">for you, Aditi</div>
+    <div class="s1-name">Happy Birthday</div>
+    <div class="s1-sub">Today, the whole universe smiles for you</div>
+    <div class="swipe-hint">
+      <span>tap anywhere to open</span>
+      <div class="swipe-arrow"><div class="chevron"></div></div>
+    </div>
+  </div>
+
+  <!-- Screen 2: Cake -->
+  <div id="screen2" class="screen hidden">
+    <div style="position:relative;display:inline-block;" id="confetti-origin">
+      <div class="cake-wrap">
+        <svg width="200" height="220" viewBox="0 0 200 220">
+          <g class="flame" transform="translate(100,20)">
+            <ellipse cx="0" cy="0" rx="5" ry="8" fill="#ffe066"/>
+            <ellipse cx="0" cy="2" rx="3" ry="5" fill="#ffaa00"/>
+            <ellipse cx="0" cy="4" rx="1.5" ry="3" fill="#fff"/>
+          </g>
+          <rect x="98" y="28" width="4" height="22" fill="#e8c4a0"/>
+          <rect x="30" y="100" width="140" height="55" rx="8" fill="#d4527e"/>
+          <rect x="30" y="100" width="140" height="18" rx="4" fill="#e8739a"/>
+          <rect x="20" y="155" width="160" height="50" rx="8" fill="#e8739a"/>
+          <rect x="20" y="155" width="160" height="18" rx="4" fill="#f0a0be"/>
+          <rect x="20" y="195" width="160" height="10" rx="4" fill="#f5c0d0"/>
+          <ellipse cx="55" cy="100" rx="10" ry="6" fill="#f0e0f0"/>
+          <ellipse cx="100" cy="100" rx="10" ry="6" fill="#f0e0f0"/>
+          <ellipse cx="145" cy="100" rx="10" ry="6" fill="#f0e0f0"/>
+          <circle cx="45" cy="165" r="5" fill="#fff"/>
+          <circle cx="75" cy="170" r="4" fill="#ffddee"/>
+          <circle cx="105" cy="163" r="5" fill="#fff"/>
+          <circle cx="135" cy="170" r="4" fill="#ffddee"/>
+          <circle cx="160" cy="165" r="5" fill="#fff"/>
+          <text x="100" y="185" font-family="Lato,sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle" letter-spacing="1">Happy Birthday</text>
+        </svg>
+      </div>
+    </div>
+    <div class="s2-num">22</div>
+    <div class="s2-label">years of being wonderful</div>
+    <button class="next-btn" onclick="goTo(3)">next &rarr;</button>
+  </div>
+
+  <!-- Screen 3: Message -->
+  <div id="screen3" class="screen hidden">
+    <div class="msg-card">
+      <div class="heart-icon">
+        <svg width="40" height="36" viewBox="0 0 40 36">
+          <path d="M20 33 C20 33 3 22 3 12 C3 6 7.5 2 13 2 C16 2 18.5 3.5 20 6 C21.5 3.5 24 2 27 2 C32.5 2 37 6 37 12 C37 22 20 33 20 33Z" fill="#c97a8a" opacity="0.9"/>
+        </svg>
+      </div>
+      <div class="msg-title">To the girl who holds my heart</div>
+      <div class="msg-body">
+        Every single day with you feels like a gift I never knew I deserved. You make ordinary moments extraordinary just by being you — your laugh, your kindness, the way you care about everything and everyone around you.<br><br>
+        On your 22nd birthday, I want you to know: you are deeply, completely, endlessly loved. Not just today, but every day of your beautiful life.
+      </div>
+      <div class="msg-sign">— Stay Happy Khorgosh</div>
+    </div>
+    <button class="next-btn" style="margin-top:1.8rem;" onclick="goTo(4)">Next &rarr;</button>
+  </div>
+
+  <!-- Screen 4: Memories -->
+  <div id="screen4" class="screen hidden">
+    <div class="mem-title">Some of your moments</div>
+    <div class="mem-sub">a few frames from the best story</div>
+    <div class="photos-grid">
+      <div class="photo-frame" style="background:linear-gradient(135deg,#3d1a2e,#6b2a4a);">
+        <div class="photo-inner"><img src="images/IMG-20260421-WA0019.jpg"></div>
+        <div class="photo-label"></div>
+      </div>
+      <div class="photo-frame" style="background:linear-gradient(135deg,#1a2a3d,#2a4a6b);">
+        <div class="photo-inner"><img src="images/IMG-20260419-WA0073.jpg"></div>
+        <div class="photo-label"></div>
+      </div>
+      <div class="photo-frame" style="background:linear-gradient(135deg,#1a3d2a,#2a6b4a);">
+        <div class="photo-inner"><img src="images/aes.jpeg"></div>
+        <div class="photo-label"></div>
+      </div>
+      <div class="photo-frame" style="background:linear-gradient(135deg,#3d2a1a,#6b4a2a);">
+        <div class="photo-inner"><img src="images/IMG-20260421-WA0021.jpg"></div>
+        <div class="photo-label"></div>
+      </div>
+      <div class="photo-frame" style="background:linear-gradient(135deg,#2a1a3d,#4a2a6b);">
+        <div class="photo-inner"><img src="images/IMG-20260421-WA0023.jpg"></div>
+        <div class="photo-label"></div>
+      </div>
+      <div class="photo-frame" style="background:linear-gradient(135deg,#3d1a1a,#6b2a2a);">
+        <div class="photo-inner"><img src="images/IMG-20260421-WA0022.jpg"></div>
+        <div class="photo-label"></div>
+      </div>
+    </div>
+    <div class="final-msg">Reply Dis, Bokbina</div>
+  </div>
+
+  <!-- Photo Lightbox Modal -->
+  <div id="photo-modal" class="photo-modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closePhotoModal()">&times;</span>
+      <img id="modal-image" src="" alt="Full size image">
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
